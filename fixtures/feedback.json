@@ -1,0 +1,6 @@
+[
+  {"id": "synthetic-1", "session": "session-a", "at": "2026-01-05T10:00:00Z", "key": "summary.max_bullets", "value": 3},
+  {"id": "synthetic-2", "session": "session-b", "at": "2026-01-06T10:00:00Z", "key": "summary.max_bullets", "value": 3},
+  {"id": "synthetic-3", "session": "session-c", "at": "2026-01-07T10:00:00Z", "key": "summary.max_bullets", "value": 3},
+  {"id": "synthetic-4", "session": "session-d", "at": "2026-01-07T11:00:00Z", "key": "agent.outbound_approval_required", "value": false}
+]

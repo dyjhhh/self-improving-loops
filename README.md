@@ -42,12 +42,12 @@ Read [`feedback_loop.py`](feedback_loop.py), the [synthetic fixtures](fixtures),
 - Policy keys governing external actions are excluded from automatic proposals here. The example contains no outbound tools, autonomous self-editing, or model training.
 - A production consumer must verify identity and authorization, write configuration atomically, monitor results, and provide rollback. This repository stops at a tested candidate and receipt.
 
-The older system used local feedback files, private logs, and scheduled model-assisted review. This public edition replaces those inputs with fictional records and adds explicit version checks. It does not claim that the demo is the deployed system.
+The older system used local feedback files, private logs, and scheduled model-assisted review. This public edition replaces those inputs with fictional records and adds explicit version checks. It does not claim that the demo is the deployed system. In the private system, low-risk presentation changes are applied and reported afterward, while anything touching meaning, money or outbound messages waits for my decision. This edition requires explicit approval for every change, so the approval step itself can be tested.
 
 ## Related work
 
 [Agent OS](https://github.com/dyjhhh/agent-os) · [Evaluation gates](https://github.com/dyjhhh/agent-eval-gates) · [Reliability](https://github.com/dyjhhh/agent-reliability) · [Security hooks](https://github.com/dyjhhh/agent-security-hooks)
 
-Built by Yujia Dong with Claude Code and Codex. The public extraction and tests were developed with Codex; design choices and review remain my responsibility.
+Designed and built by Yujia Dong, using Claude Code and Codex as coding tools. Codex helped write the public extraction and tests; design choices and review are mine.
 
 MIT license. See [LICENSE](LICENSE).

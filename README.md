@@ -1,14 +1,18 @@
 # Self-Improving Loops
 
+**Problem:** corrections to an agent tend to stay buried in old conversations instead of becoming changes anyone can inspect.\
+**What it shows:** a feedback-to-configuration loop with explicit approval, a regression check and a hash-linked receipt.\
+**Run it in about 60 seconds:** clone, then `make test` (Python 3.10+; no model key or third-party package).
+
 [![tests](https://github.com/dyjhhh/self-improving-loops/actions/workflows/test.yml/badge.svg)](https://github.com/dyjhhh/self-improving-loops/actions/workflows/test.yml)
 
-I wanted corrections to an agent's work to lead to changes I could inspect, rather than another instruction buried in a conversation. In my personal system, this led to scheduled feedback collection, bounded review, and reports with an explicit place to be read.
+In my personal system, corrections go through scheduled feedback collection, bounded review, and reports with an explicit place to be read.
 
 This repository makes a small part of that process runnable: **structured feedback → proposal → approval → regression check → candidate configuration and receipt**.
 
 ## Try it
 
-Python 3.10 or newer. No model key or third-party package is required:
+To run the demo and each suite separately:
 
 ```sh
 python3 demo.py

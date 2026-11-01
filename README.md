@@ -1,14 +1,21 @@
 # Self-Improving Loops
 
 **Problem:** corrections to an agent tend to stay buried in old conversations instead of becoming changes anyone can inspect.\
-**What it shows:** a feedback-to-configuration loop with explicit approval, a regression check and a hash-linked receipt.\
+**What it shows:** a correction loop with a hard stop. Three requests for shorter summaries become one proposed change; a request to disable outbound approval is held for a person.\
 **Run it in about 60 seconds:** clone, then `make test` (Python 3.10+; no model key or third-party package).
 
 [![tests](https://github.com/dyjhhh/self-improving-loops/actions/workflows/test.yml/badge.svg)](https://github.com/dyjhhh/self-improving-loops/actions/workflows/test.yml)
 
-In my personal system, corrections go through scheduled feedback collection, bounded review, and reports with an explicit place to be read.
+## Applying this on an engineering team
 
-This repository makes a small part of that process runnable: **structured feedback → proposal → approval → regression check → candidate configuration and receipt**.
+- **Feedback to configuration with an audit trail.** Repeated corrections are grouped into one proposed parameter change, and the receipt records the plan hash and the before and after configuration hashes.
+- **Approval by risk.** Policy keys that govern external actions are excluded from automatic proposals; the example refuses to disable outbound approval.
+- **Recheck at approval time.** The plan is recomputed against the current configuration and feedback, so an approval for a stale plan is rejected.
+- **Regression check before rollout.** The candidate runs against a golden set, and an empty suite fails instead of passing.
+
+In the harness I run, corrections go through scheduled feedback collection, bounded review, and reports with an explicit place to be read.
+
+This repository makes a small part of that process runnable: structured feedback, then a proposal, approval, a regression check, and a candidate configuration with its receipt.
 
 ## Try it
 
